@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8-oracle
+    container_name: php_db
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_pw_shh
+      MYSQL_DATABASE: demo
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/dump.sql
+  web:
+    build: .
+    container_name: php_web
+    depends_on:
+      - db
+    volumes:
+      - ./php/:/var/www/html/
+    ports:
+      - "8080:80"
