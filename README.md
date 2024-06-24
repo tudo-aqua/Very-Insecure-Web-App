@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-git clone https://ls14-scm.cs.tu-dortmund.de/pse-22/very-insecure-web-app.git
+git clone git@github.com:tudo-aqua/Very-Insecure-Web-App.git
 ```
 
 ## Running the Web App
